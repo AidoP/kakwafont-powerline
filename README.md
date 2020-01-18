@@ -1,8 +1,10 @@
 # KakwaFont
 
-Another 12px monospace bitmap font.
+Another 12px monospace bitmap font but with added powerline glyphs.
 
 ## Presentation
+
+This is a fork of KakwaFont adding a few powerline characters. All other characters are unchanged. Note: the bold version does not have the extra chaaracters.
 
 KakwaFont is a 12px monospace bitmap font based on [Terminus](http://terminus-font.sourceforge.net/).
 
@@ -16,15 +18,19 @@ The result is a clear font, well suited for programming and terminal.
 
 Ascii Table: 
 
-![Example](https://cdn.rawgit.com/kakwa/kakwafont/master/img/ex-1.png)
+![Example](img/ex-1.png)
 
 Test: 
 
-![Example](https://cdn.rawgit.com/kakwa/kakwafont/master/img/ex-2.png)
+![Example](img/ex-2.png)
 
 Code example: 
 
-![Example](https://cdn.rawgit.com/kakwa/kakwafont/master/img/ex-3.png)
+![Example](img/ex-3.png)
+
+Powerline example:
+
+![Example](img/powerline.png)
 
 ## License
 
@@ -34,20 +40,18 @@ The license is available with a FAQ at [scripts.sil.org](http://scripts.sil.org/
 
 ## Download
 
-The latest version of KakwaFont can be downloaded here:
+Clone the repo for the latest version
 
-* [KakwaFont latest](https://github.com/kakwa/kakwafont/archive/master.tar.gz)
-
-Previous versions can be found here:
-
-* [KakwaFont releases](https://github.com/kakwa/kakwafont/releases)
+```bash
+$ git clone https://github.com/AidoP/kakwafont-powerline
+```
 
 ## Install
 
-To install this font, you need *bdftopcf* and *mkfontdir* (provided by the *xfonts-utils* package in Debian/Ubuntu)
+To install this font, you need *bdftopcf*, *bdf2psf* (For console/tty support) and *mkfontdir* (provided by the *xfonts-utils* package in Debian/Ubuntu)
 
 ```bash
-# build the .pcf.gz
+# build the .pcf.gz and psf
 $ make
 
 # install
@@ -58,3 +62,5 @@ $ make install INDEX=true # DESTDIR=./installroot/ FONTDIR=/usr/share/fonts/X11/
 # show kakwafont name
 $ xlsfonts |grep kakwafont
 ```
+
+To change your console font, add `FONT="/usr/share/fonts/X11/misc/kakwafont-12-n.psf"` to `/etc/rc.conf` (Probably different with systemd)
